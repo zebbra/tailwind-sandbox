@@ -18,13 +18,13 @@ npm install
 
 ## Start development server
 
-first start the tailwind watcher
+first start the tailwind watcher in one terminal
 
 ```bash
 npm run watch-tailwind
 ```
 
-then start the development server
+then start the development server in another terminal
 
 ```bash
 npm run start
