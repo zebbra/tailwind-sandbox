@@ -3,6 +3,16 @@
 ## Setup
 
 ```bash
+# clone this repo locally
+git clone https://github.com/zebbra/tailwind-sandbox.git
+
+# move to its folder
+cd tailwind-sandbox
+
+# opens vs code
+code .
+
+# then install dependencies in the terminal of vs code
 npm install
 ```
 
