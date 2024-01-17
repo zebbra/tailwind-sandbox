@@ -1441,6 +1441,46 @@ html {
   justify-self: end;
 }
 
+.modal {
+  pointer-events: none;
+  position: fixed;
+  inset: 0px;
+  margin: 0px;
+  display: grid;
+  height: 100%;
+  max-height: none;
+  width: 100%;
+  max-width: none;
+  justify-items: center;
+  padding: 0px;
+  opacity: 0;
+  overscroll-behavior: contain;
+  z-index: 999;
+  background-color: transparent;
+  color: inherit;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition-property: transform, opacity, visibility;
+  overflow-y: hidden;
+}
+
+:where(.modal) {
+  align-items: center;
+}
+
+.modal-open,
+.modal:target,
+.modal-toggle:checked + .modal,
+.modal[open] {
+  pointer-events: auto;
+  visibility: visible;
+  opacity: 1;
+}
+
+:root:has(:is(.modal-open, .modal:target, .modal-toggle:checked + .modal, .modal[open])) {
+  overflow: hidden;
+}
+
 .stats {
   display: inline-grid;
   border-radius: var(--rounded-box, 1rem);
@@ -2204,6 +2244,22 @@ details.collapse summary::-webkit-details-marker {
   opacity: 0.6;
 }
 
+.modal:not(dialog:not(.modal-open)),
+  .modal::backdrop {
+  background-color: #0006;
+  animation: modal-pop 0.2s ease-out;
+}
+
+.modal-open .modal-box,
+.modal-toggle:checked + .modal .modal-box,
+.modal:target .modal-box,
+.modal[open] .modal-box {
+  --tw-translate-y: 0px;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 @keyframes modal-pop {
   0% {
     opacity: 0;
@@ -2618,6 +2674,38 @@ details.collapse summary::-webkit-details-marker {
   top: 104px;
 }
 
+.right-6 {
+  right: 1.5rem;
+}
+
+.bottom-6 {
+  bottom: 1.5rem;
+}
+
+.top-6 {
+  top: 1.5rem;
+}
+
+.left-6 {
+  left: 1.5rem;
+}
+
+.right-12 {
+  right: 3rem;
+}
+
+.top-12 {
+  top: 3rem;
+}
+
+.left-\[-12rem\] {
+  left: -12rem;
+}
+
+.left-\[-120px\] {
+  left: -120px;
+}
+
 .z-10 {
   z-index: 10;
 }
@@ -2646,6 +2734,14 @@ details.collapse summary::-webkit-details-marker {
   margin: 1.5rem;
 }
 
+.m-8 {
+  margin: 2rem;
+}
+
+.m-auto {
+  margin: auto;
+}
+
 .mb-12 {
   margin-bottom: 3rem;
 }
@@ -2668,6 +2764,14 @@ details.collapse summary::-webkit-details-marker {
 
 .mt-6 {
   margin-top: 1.5rem;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.mb-24 {
+  margin-bottom: 6rem;
 }
 
 .inline-block {
@@ -2714,6 +2818,42 @@ details.collapse summary::-webkit-details-marker {
   height: 100vh;
 }
 
+.h-full {
+  height: 100%;
+}
+
+.h-\[screen-12\] {
+  height: screen-12;
+}
+
+.h-\[100\%-64px\] {
+  height: 100%-64px;
+}
+
+.h-\[95\%\] {
+  height: 95%;
+}
+
+.h-\[calc\(100vh-12rem\)\] {
+  height: calc(100vh - 12rem);
+}
+
+.h-\[calc\(100vh-24px\)\] {
+  height: calc(100vh - 24px);
+}
+
+.h-\[calc\(100vh-200px\)\] {
+  height: calc(100vh - 200px);
+}
+
+.h-\[85\%\] {
+  height: 85%;
+}
+
+.h-\[screen\] {
+  height: screen;
+}
+
 .max-h-\[300px\] {
   max-height: 300px;
 }
@@ -2754,8 +2894,36 @@ details.collapse summary::-webkit-details-marker {
   width: 100%;
 }
 
+.w-\[450px\] {
+  width: 450px;
+}
+
+.w-\[350px\] {
+  width: 350px;
+}
+
+.w-96 {
+  width: 24rem;
+}
+
+.min-w-\[250px\] {
+  min-width: 250px;
+}
+
+.min-w-\[33\%\] {
+  min-width: 33%;
+}
+
 .max-w-full {
   max-width: 100%;
+}
+
+.max-w-\[90\%\] {
+  max-width: 90%;
+}
+
+.max-w-\[550px\] {
+  max-width: 550px;
 }
 
 .shrink-0 {
@@ -2764,6 +2932,11 @@ details.collapse summary::-webkit-details-marker {
 
 .table-auto {
   table-layout: auto;
+}
+
+.translate-x-\[-12rem\] {
+  --tw-translate-x: -12rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .cursor-help {
@@ -2853,6 +3026,10 @@ details.collapse summary::-webkit-details-marker {
 
 .self-center {
   align-self: center;
+}
+
+.overflow-hidden {
+  overflow: hidden;
 }
 
 .overflow-x-auto {
@@ -3077,6 +3254,16 @@ details.collapse summary::-webkit-details-marker {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.drop-shadow-lg {
+  --tw-drop-shadow: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.drop-shadow-2xl {
+  --tw-drop-shadow: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
 .btn {
   box-shadow: none;
 }
@@ -3196,6 +3383,10 @@ details.collapse summary::-webkit-details-marker {
     top: 2rem;
   }
 
+  .lg\:left-auto {
+    left: auto;
+  }
+
   .lg\:inline {
     display: inline;
   }
@@ -3214,6 +3405,14 @@ details.collapse summary::-webkit-details-marker {
 
   .lg\:min-w-\[500px\] {
     min-width: 500px;
+  }
+
+  .lg\:min-w-\[33\%\] {
+    min-width: 33%;
+  }
+
+  .lg\:max-w-\[550px\] {
+    max-width: 550px;
   }
 
   .lg\:grid-cols-5 {
@@ -3256,6 +3455,14 @@ details.collapse summary::-webkit-details-marker {
 @media (min-width: 1850px) {
   .\33xl\:static {
     position: static;
+  }
+
+  .\33xl\:flex {
+    display: flex;
+  }
+
+  .\33xl\:hidden {
+    display: none;
   }
 
   .\33xl\:rounded-none {
