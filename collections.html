@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="/build/output.css" rel="stylesheet" />
+        <script src="https://unpkg.com/htmlincludejs"></script>
+    </head>
+    <body>
+        <div class="relative flex flex-col-reverse md:flex-row max-w-full">
+            <include src="./components/main/nav.html"></include>
+            <div id="container main" class="h-screen overflow-y-scroll no-scrollbar w-full">
+                <div id="content main" class="relative m-6 flex flex-col">
+                <include src="./components/collections/main-header.html"></include>
+                <div class="p-6">
+                    <include src="./components/main/table-filters.html"></include>
+                </div>
+                <include src="./components/collections/main-table.html"></include>
+                <include src="./components/collections/main-table-pagination.html"></include>
+            </div>
+        </div>
+    </body>
+</html>
