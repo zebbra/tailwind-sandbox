@@ -1,12 +1,25 @@
-<div id="table pagination" class="pt-6 flex justify-center">
-    <div class="join self-center">
-        <button class="join-item btn btn-primary hover:bg-primary">1</button>
-        <button class="join-item btn hover:bg-primary">2</button>
-        <button class="join-item btn hover:bg-primary">3</button>
-        <button class="join-item btn hover:bg-primary">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-            </svg>
-        </button>
+<div id="table pagination" class="p-6 flex items-center justify-between">
+    <div class="text-sm">Show records 1312 to 1332 of 1337.</div>
+    <div class="flex flex-row gap-4">
+        <div class="flex flex-row gap-2 items-center">
+            <span class="text-sm">Records per page</span>
+            <select class="select btn select-bordered rounded-lg h-full">
+                <option selected>10</option>
+                <option>20</option>
+                <option>50</option>
+                <option>100</option>
+                <option>500</option>
+            </select>
+        </div>
+        <div class="join self-center">
+            <button class="join-item btn btn-primary">1</button>
+            <button class="join-item btn">2</button>
+            <button class="join-item btn">3</button>
+            <button class="join-item btn">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                </svg>
+            </button>
+        </div>
     </div>
 </div>

@@ -11,12 +11,15 @@
             <include src="./components/main/nav.html"></include>
             <div id="container main" class="h-screen overflow-y-scroll no-scrollbar w-full">
                 <div id="content main" class="relative m-6 flex flex-col">
-                <include src="./components/collection/main-header.html"></include>
-                <include src="./components/collection/main-subnav.html"></include>
-                <include src="./components/collection/main-stats.html"></include>
-                <include src="./components/collection/main-contentnav.html"></include>
-                <include src="./components/collection/main-table.html"></include>
-                <include src="./components/collection/main-table-pagination.html"></include>
+                <include src="./components/collection/header.html"></include>
+                <include src="./components/collection/subnav.html"></include>
+                <include src="./components/collection/stats.html"></include>
+                <div id="table nav" class="flex flex-row flex-wrap justify-between p-3 md:p-4 lg:p-6 bg-base-100 z-10 sticky top-[104px] items-center">
+                    <include src="./components/main/table-filters.html"></include>
+                    <include src="./components/main/table-actions.html"></include>
+                </div>
+                <include src="./components/collection/table-content.html"></include>
+                <include src="./components/main/table-pagination.html"></include>
             </div>
         </div>
     </body>
