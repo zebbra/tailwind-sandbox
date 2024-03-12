@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link href="/build/output.css" rel="stylesheet" />
         <script src="https://unpkg.com/htmlincludejs"></script>
+        <script src="/build/base.js"></script> 
     </head>
     <body>
         <div class="relative flex flex-col-reverse md:flex-row max-w-full">
@@ -18,22 +19,24 @@
                     <include src="./components/main/table-filters.html"></include>
                     <include src="./components/main/table-actions.html"></include>
                 </div>
+                <include src="./components/main/table-filters-area.html"></include>
                 <include src="./components/collection/table-content.html"></include>
                 <include src="./components/main/table-pagination.html"></include>
+                <include src="./components/main/modals.html"></include>
             </div>
         </div>
-        <div id="side-panel" class="hidden border-l-1 border-l border-base-300 w-[850px] h-screen z-50 right-0 3xl:flex 3xl:static bg-base-100">
-            <div class="m-6 no-scrollbar overflow-y-scroll">
+        <div id="side-panel" class="hidden border-l-1 border-l border-base-content/[0.1] w-[850px] h-screen z-50 right-0 3xl:flex 3xl:static bg-base-100">
+            <div class="m-6 no-scrollbar overflow-y-scroll w-full">
                 <include src="./components/collection/sidepanel-content.html"></include>
             </div>
         </div>
-        <div id="side-panel modal" class="absolute flex z-50 lg:min-w-[33%] lg:max-w-[550px] rounded-lg bg-base-100 border border-base-300 3xl:hidden lg:left-auto left-6 right-6 top-6 bottom-6 drop-shadow-2xl">
+        <div id="side-panel modal" class="absolute flex z-50 lg:min-w-[33%] lg:max-w-[550px] rounded-lg bg-base-100 border border-base-content/[0.1] 3xl:hidden lg:left-auto left-6 right-6 top-6 bottom-6 drop-shadow-2xl">
             <button class="btn btn-ghost absolute right-0">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
                   </svg>                      
             </button>
-            <div class="m-6 no-scrollbar overflow-y-scroll relative">
+            <div class="m-6 no-scrollbar overflow-y-scroll relative w-full">
                 <include src="./components/collection/sidepanel-content.html"></include>
             </div>
         </div>

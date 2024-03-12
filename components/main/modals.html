@@ -1,0 +1,193 @@
+<dialog id="modImportStep1" class="modal">
+  <div class="max-h-11/12 modal-box flex w-11/12 max-w-5xl flex-col p-9 md:p-10 lg:p-12">
+    <form method="dialog">
+      <button class="btn btn-circle btn-ghost absolute right-6 top-6 z-10 hover:bg-base-content/[0.1]">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </form>
+
+    <div id="modal header" class="mb-6 w-full">
+      <span class="mb-4 text-sm">Step 1 of 4</span>
+      <h2 class="text-xl lg:text-2xl">Choose file</h2>
+    </div>
+
+    <div id="modal content" class="relative overflow-y-auto">
+      <div class="grid grid-cols-1 gap-3 md:grid-cols-6">
+        <p class="col-span-6 mb-6">Please provide your collection file holding your records.</p>
+        <div class="col-span-6 flex items-center justify-center">
+          <label for="dropzone-file" class="flex w-full cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed border-base-content/[0.1] bg-base-content/[0.03] hover:bg-base-content/[0.1]">
+            <div class="flex flex-col items-center justify-center p-12">
+              <p class="mb-2 text-sm">Click to upload or drag and drop</p>
+            </div>
+            <input id="dropzone-file" type="file" class="hidden" />
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div id="modal action" class="mt-6 grid grid-cols-2 gap-3 md:grid-cols-6">
+      <div class="col-span-1 md:col-span-3">
+        <button class="btn btn-ghost hover:bg-base-content/[0.1] w-full font-normal" onclick="modImportStep1.close()">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+          <span>Cancel</span>
+        </button>
+      </div>
+      <div class="col-span-1 md:col-span-3">
+        <button class="btn btn-neutral w-full font-normal" onclick="modImportStep2.showModal(); modImportStep1.close()">
+          Next
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+  </div>
+</dialog>
+
+<dialog id="modImportStep2" class="modal">
+  <div class="max-h-11/12 modal-box flex w-11/12 max-w-5xl flex-col p-9 md:p-10 lg:p-12">
+    <form method="dialog">
+      <button class="btn btn-circle btn-ghost absolute right-6 top-6 z-10 hover:bg-base-content/[0.1]">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </form>
+
+    <div id="modal header" class="mb-6 w-full">
+      <span class="mb-4 text-sm">Step 2 of 4</span>
+      <h2 class="text-xl lg:text-2xl">Choose mapping method</h2>
+    </div>
+
+    <div id="modal content" class="relative overflow-y-auto">
+      <div class="grid grid-cols-1 gap-3 md:grid-cols-6">
+        <label class="cursor-pointer col-span-3">
+          <input type="radio" name="radio-10" class="radio hidden peer" checked/>
+          <div class="rounded-lg bg-base-content/[0.03] peer-checked:bg-primary hover:bg-base-content/[0.1] px-6 py-12">
+            <div class="flex flex-col items-center justify-center md:max-w-52 w-full m-auto">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 m-auto">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
+              </svg>           
+                <span class="mt-6 text-center">Load previous mapping</span>
+            </div>
+          </div>
+        </label>
+        <label class="cursor-pointer col-span-3">
+          <input type="radio" name="radio-10" class="radio hidden peer" />
+          <div class="rounded-lg bg-base-content/[0.03] peer-checked:bg-primary hover:bg-base-content/[0.1] px-6 py-12">
+            <div class="flex flex-col items-center justify-center md:max-w-52 w-full m-auto">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                </svg>                
+                <span class="mt-6 text-center">Create new mapping</span>
+            </div>
+          </div>
+        </label>
+      </div>
+    </div>
+
+    <div id="modal action" class="mt-6 grid grid-cols-2 gap-3 md:grid-cols-6">
+      <div class="col-span-1 md:col-span-3">
+        <button class="btn btn-ghost w-full hover:bg-base-content/[0.1] font-normal" onclick="modImportStep1.showModal(); modImportStep2.close()">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+          </svg>
+          <span>Back</span>
+        </button>
+      </div>
+      <div class="col-span-1 md:col-span-3">
+        <button class="btn btn-neutral w-full font-normal" onclick="modImportStep3.showModal(); modImportStep2.close()">
+          Next
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<dialog id="modImportStep3" class="modal">
+  <div class="max-h-11/12 modal-box flex w-11/12 max-w-5xl flex-col p-9 md:p-10 lg:p-12">
+    <form method="dialog">
+      <button class="btn btn-circle btn-ghost absolute right-6 top-6 z-10 hover:bg-base-content/[0.1]">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </form>
+
+    <div id="modal header" class="mb-6 w-full">
+      <span class="mb-4 text-sm">Step 3 of 4</span>
+      <h2 class="text-xl lg:text-2xl">Edit mapping</h2>
+    </div>
+
+    <div id="modal content" class="relative overflow-y-auto">
+      <div class="grid grid-cols-1 gap-3 md:grid-cols-6 content-stretch">
+        <div class="col-span-6">
+          Required attributes
+          <p>Please map all required attributes before continuing.</p>
+        </div>
+
+        <div class="col-span-2 self-center">
+          <span>Scientific Name</span><br />
+          <span class="text-sm">(tax_scientific_name)</span>
+        </div>
+        <div class="col-span-2 place-self-center">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+          </svg>          
+        </div>
+        <div class="col-span-2 justify-self-end">
+          <select class="select select-bordered w-full max-w-xs">
+          <option disabled selected>Choose attribute</option>
+          <option>ID</option>
+          <option>Greedo</option>
+          </select>
+        </div>
+        
+        <div class="col-span-2 self-center">
+          <span>Scientific Name</span><br />
+          <span class="text-sm">(tax_scientific_name)</span>
+        </div>
+        <div class="col-span-2 place-self-center">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+          </svg>          
+        </div>
+        <div class="col-span-2 justify-self-end">
+          <select class="select select-bordered w-full max-w-xs">
+          <option disabled selected>Choose attribute</option>
+          <option>ID</option>
+          <option>Greedo</option>
+          </select>
+        </div>
+
+      </div>
+    </div>
+
+    <div id="modal action" class="mt-6 grid grid-cols-2 gap-3 md:grid-cols-6">
+      <div class="col-span-1 md:col-span-3">
+        <button class="btn btn-outline border-base-content/[0.1] w-full font-normal" onclick="modImportStep2.showModal(); modImportStep3.close()">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+          </svg>
+          <span>Back</span>
+        </button>
+      </div>
+      <div class="col-span-1 md:col-span-3">
+        <button class="btn btn-neutral w-full font-normal" onclick="modImportStep4.showModal(); modImportStep3.close()">
+          Next
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</dialog>
